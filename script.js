@@ -14,5 +14,17 @@ function getUserValue() {
 
 //function to generate a pseudorandom number generator (PRNG) from 0 to 2 (2 included).
 function randomNumber() {
-  return Math.round(Math.random() * 2);
+  return Math.round(Math.random() * 3);
+}
+
+//function to generate computer choices
+
+function getComputerChoice(value) {
+  if (value === 0) {
+    return "Rock";
+  } else if (value === 1) {
+    return "Paper";
+  } else {
+    return "scissors";
+  }
 }
