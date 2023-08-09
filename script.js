@@ -10,6 +10,7 @@
 // function to get user choice
 function getUserValue() {
   let value = prompt("Choose Rock, Paper or Scissors: ", "Rock");
+  value = value.toLocaleLowerCase();
   return value;
 }
 
@@ -55,12 +56,15 @@ function playRound(playerSelection, computerSelection) {
     return "Invalid input!";
   }
 }
-const playerSelection = "rock";
 
+//Function that uses loop to run play round fuction up to 5 times
+//It also keeps in check whether you won more times than the computer or not
+//and gives final verdict.
 function game() {
   let playerCounter = 0;
   let computerCounter = 0;
   for (index = 0; index < 5; ++index) {
+    const playerSelection = getUserValue();
     const computerSelection = getComputerChoice(randomNumber());
     let checker = playRound(playerSelection, computerSelection);
 
@@ -79,8 +83,8 @@ function game() {
     }
   }
   playerCounter > computerCounter
-    ? console.log("You won the game!")
-    : console.log("You lost the game");
+    ? console.log("\n\n\nYou won the game!")
+    : console.log("\n\n\nYou lost the game");
 }
 
 game();
